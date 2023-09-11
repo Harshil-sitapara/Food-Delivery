@@ -1,0 +1,707 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=RocknRoll+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap");
+/* tailwinf import  */
+/* src/index.css */
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';  */
+
+/* Navbar style */
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.navbar {
+  font-family: "Baloo Bhai 2", cursive;
+  font-weight: bold;
+  color: white;
+  box-shadow: none;
+  box-shadow: none;
+  height: 80px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, height 0.3s ease,
+    padding 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.header__shrink {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 5px 5px 15px -5px #fde4e4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.active__menu {
+  color: orange !important;
+}
+.logo {
+  height: 3rem;
+  width: 27.8rem;
+  margin-top: -1.5rem;
+  margin-bottom: -2rem;
+  cursor: pointer;
+  font-family: "Caveat", cursive;
+  color: orange;
+  padding-left: 28px;
+}
+.menu_item {
+  justify-content: space-between;
+  font-size: 20px;
+}
+.menu_item li {
+  padding: 0px 22px;
+}
+.cart_icon .nav-link {
+  display: flex;
+  justify-content: center;
+}
+.cart_count {
+  text-align: center;
+  border-radius: 50%;
+  justify-content: center;
+  padding-right: 13px;
+}
+.profile_item {
+  margin-left: 25%;
+  justify-content: center;
+  top: 6px;
+  position: relative;
+}
+.profile_item .cart_icon {
+  margin-right: 12px;
+}
+.prodileinfo {
+  padding-left: 70px;
+  text-align: left;
+}
+.profileImg {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+.logoutButton,.logoutButton:focus{
+  background-color: red;
+  outline: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin-right: 10px;
+}
+.cancelButton,.cancelButton:focus{
+  background-color: grey;
+  outline: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 10px;
+  border: none;
+}
+/* Front page style */
+.mainContainer {
+  width: 98.8vw;
+  display: flex;
+  font-family: "RocknRoll One", sans-serif;
+}
+.leftContainer {
+  width: 50vw;
+  height: 100vh;
+}
+
+.rightContainer {
+  width: 50vw;
+  height: 100vh;
+}
+.backGif {
+  height: 80%;
+  width: 80%;
+}
+.frontText {
+  font-family: "RocknRoll One", sans-serif !important;
+  position: absolute;
+  padding-top: 120px;
+  padding-left: 43px;
+}
+.frontText h4 {
+  font-family: "RocknRoll One", sans-serif !important;
+}
+.firstLine,
+.secondLine,
+.thirdLine,
+.para {
+  padding-left: 30px;
+  font-family: "RocknRoll One", sans-serif;
+}
+.para {
+  padding-top: 10px;
+}
+.frontBtns,
+.frontBtns:focus {
+  padding-left: 30px;
+  padding-top: 15px;
+  outline: none;
+}
+.guaranty {
+  display: flex;
+  margin-top: 80px;
+}
+.leftGuaranty {
+  padding-right: 40px;
+  padding-left: 30px;
+  display: flex;
+}
+.leftGuaranty p {
+  margin-left: 10px;
+}
+.rightGuaranty {
+  display: flex;
+}
+.rightGuaranty p {
+  margin-left: 10px;
+}
+.profile_icon {
+  margin-top: 6px;
+}
+/* Category container style */
+.categoryContainer {
+  justify-content: space-evenly;
+}
+.box {
+  background-color: rgb(255, 208, 122);
+  margin: 0px 1px;
+  height: 11%;
+  display: flex;
+  border-radius: 12px;
+  position: relative;
+  bottom: 0px;
+  transition-property: bottom;
+  transition-duration: 0.5s;
+}
+.firstBox:hover {
+  bottom: 17px;
+}
+.secondBox:hover {
+  bottom: 17px;
+}
+.thirdBox:hover {
+  bottom: 17px;
+}
+.firstImage,
+.secondImage,
+.thirdImage {
+  /* font-size: 78px; */
+}
+.box p {
+  font-size: 20px;
+}
+
+/* Serve section style */
+.serveMainContainer {
+  align-items: center;
+  text-align: center;
+}
+.aboveContainer h3 {
+  font-family: "RocknRoll One", sans-serif;
+  color: orange;
+  font-size: 23px;
+}
+.aboveContainer h1 {
+  font-family: "RocknRoll One", sans-serif;
+}
+.aboveContainer p {
+  color: #777;
+}
+.belowContainer {
+  margin: auto;
+}
+.belowContainer img {
+  width: 25%;
+}
+.belowContainer h4 {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: "RocknRoll One", sans-serif;
+}
+.belowContainer p {
+  color: #777;
+}
+.boxes {
+  padding: 0px 30px;
+  width: 12%;
+  height: 12%;
+}
+/* Popular food section */
+.popularItems {
+  background-color: orange;
+  width: 80%;
+  margin: auto;
+  padding: 20px 0px;
+  border-radius: 12px;
+}
+.popularFoodMain h1 {
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 35px;
+}
+.popularItems button,
+.popularItems button:focus {
+  padding: 6px 12px;
+  margin: 0px 28px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(227, 225, 225);
+  outline: none;
+}
+.card-container {
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  width: 90%;
+}
+.card {
+  padding: 23px;
+  height: 278px;
+}
+.card-image img {
+  width: 120px;
+  height: 120px;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s;
+}
+.card-image:hover img {
+  width: 140px;
+  height: 140px;
+}
+.card-image {
+  margin: auto;
+  overflow: hidden;
+}
+.card h3 {
+  font-size: 24px;
+  font-family: "RocknRoll One", sans-serif;
+}
+.card h4 {
+  font-size: 20px;
+  font-family: "RocknRoll One", sans-serif;
+  color: red;
+}
+.card-contant h3 {
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+.bottom-card-contant {
+  display: flex;
+  justify-content: space-between;
+}
+.addToCartBtn,
+.addToCartBtn:focus {
+  width: 40%;
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: orange;
+  color: rgb(255, 255, 255);
+  padding: 0px 30px;
+  outline: none;
+}
+
+/* Why food ease section style */
+.WhyMainContainer {
+  display: flex;
+  margin-top: 55px;
+}
+.left-con img {
+  height: 94%;
+  width: 78%;
+}
+.other .first_para,
+.second_para,
+.third_para {
+  font-weight: bold;
+}
+.right-con h2 {
+  font-family: "RocknRoll One", sans-serif;
+}
+.rightMark {
+  font-size: 20px;
+}
+/* Hot Pizza section style */
+
+.hotPizzaContainer h2 {
+  font-family: "RocknRoll One", sans-serif;
+  text-align: center;
+  color: red;
+}
+.hotPizzaContainer .card-container {
+  width: 70%;
+}
+.hotPizzaContainer .card {
+  width: 200px;
+}
+.hotPizzaContainer .h3 {
+  color: red;
+}
+/* Testimonials section styles */
+.mainTestimonial {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  width: 90%;
+  margin-top: 120px;
+}
+.onlineWoldImg {
+  width: 500px;
+}
+.leftTopContainer h4,
+h3 {
+  font-family: "RocknRoll One", sans-serif;
+}
+.leftTopContainer h4 {
+  color: orange;
+}
+.leftBottomContainer {
+  width: 30%;
+}
+#carouselExampleIndicators {
+  width: 300%;
+  margin-top: 40px;
+}
+#carouselExampleIndicators li {
+  background-color: grey;
+}
+#carouselExampleIndicators h4 {
+  margin-bottom: 80px;
+}
+/* Footer style */
+.fooetrMainContainer {
+  width: 102%;
+  align-items: center;
+  /* margin: auto; */
+  background-color: #ffe9c2;
+  padding: 23px 0px;
+}
+.footerLogo {
+  height: 3rem;
+  width: 27.8rem;
+  cursor: pointer;
+  font-family: "Caveat", cursive;
+  color: orange;
+}
+.footerContainer {
+  padding: 45px 45px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.section {
+  /* margin: 0rem 42px; */
+  width: 110px;
+}
+.fooetrMainContainer h3,
+h4,
+h5 {
+  font-family: "RocknRoll One", sans-serif;
+}
+.firstFooterSection{
+  margin-right: 20px;
+}
+.secondFooterSection h5 {
+  margin-bottom: 30px;
+}
+.secondFooterSection span {
+  font-weight: 500;
+}
+.thirdFooterSection .credencial {
+  font-weight: 500;
+}
+.bottomFooter {
+  display: flex;
+  width: 93%;
+  margin: auto;
+}
+.emailContainer {
+  display: flex;
+}
+.social {
+  margin-top: 34px;
+}
+.social li {
+  padding: 0px 24px 0px 0px;
+  list-style: none;
+  cursor: pointer;
+}
+/* Register page style */
+.mainRegisterContainer {
+}
+.regContainer {
+  height: 60%;
+  width: 60%;
+  background-color: rgb(252, 242, 228);
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 20px 20px 50px grey;
+}
+.leftInner {
+  padding: 30px;
+  width: 500px;
+}
+.rightInner {
+  overflow: hidden;
+}
+.regLogo {
+  font-family: "Caveat", cursive;
+  color: orange;
+  padding-left: 6px;
+  font-size: 45px;
+}
+.textFiled {
+  width: 90%;
+}
+.signupBtn {
+  color: black;
+  outline: none;
+}
+.signupBtn:focus {
+  outline: none;
+}
+.regBackImg {
+  max-height: 591px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Transparant image section */
+.common_section {
+  background: linear-gradient(
+      rgba(33, 34, 69, 0.6980392156862745),
+      rgba(33, 34, 69, 0.6980392156862745)
+    ),
+    url("D:/Food Delivery Project/fooddelivery/Client/src/assets/images/transBack.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  padding: 80px 0;
+  user-select: none;
+}
+.text-white {
+  font-family: "RocknRoll One", sans-serif;
+  margin-left: 10%;
+  font-size: 40px;
+}
+.allfood-container {
+  width: 98vw;
+  margin: auto;
+  user-select: none;
+}
+.input-con {
+  border: 0.5px solid orange;
+  width: 33%;
+  margin-left: 14%;
+  border-radius: 4px;
+}
+.search-con {
+  padding: 5px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+.cards-container {
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  width: 90%;
+}
+.cards-container .card {
+  margin: 0px 12px;
+}
+/* Cart styel */
+.main-cart-container {
+  width: 90vw;
+  margin: auto;
+  margin-top: 30px;
+}
+.cart__img-box {
+  width: 100px;
+}
+.cart__img-box img {
+  width: 80%;
+}
+.priceContainer h4 {
+  display: flex;
+}
+.price-text {
+  font-size: 34px;
+  text-align: center;
+  color: red;
+}
+.cartBtn {
+  padding: 6px 14px;
+  border: none;
+  outline: none;
+  margin: 0px 12px;
+  background-color: rgb(243, 213, 158);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.cartBtn:focus {
+  padding: 6px 14px;
+  border: none;
+  outline: none;
+  margin: 0px 12px;
+  background-color: rgb(243, 213, 158);
+  cursor: pointer;
+  border-radius: 6px;
+}
+/* Checkout page style */
+.main-checkout {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+.checkout-form input {
+  border: none;
+  border-bottom: 0.5px solid black;
+  outline: none;
+  width: 40rem;
+  padding: 17px 0px;
+  margin: 4px 0px;
+}
+.checkout-form h6 {
+  font-size: 20px;
+  font-family: "RocknRoll One", sans-serif;
+}
+.paymentBtn,
+.paymentBtn:focus {
+  padding: 6px 5px;
+  border: none;
+  outline: none;
+  margin: 30px 0px;
+  background-color: rgb(243, 213, 158);
+  cursor: pointer;
+  border-radius: 6px;
+  width: 18%;
+}
+.total-ckeckout {
+  background-color: #ffedcd;
+  padding: 20px;
+  width: 31%;
+  height: 30%;
+  justify-content: space-between;
+  position: relative;
+}
+.total-ckeckout h6 {
+  font-size: 20px;
+}
+.total-ckeckout span {
+  position: absolute;
+  right: 23px;
+}
+.empty-cart-text {
+  position: relative;
+  left: 39vw;
+  padding: 34px 0px;
+}
+.qua {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.cart__item-del {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.not-found-txt {
+  font-size: 23px;
+}
+/* Feeback page style */
+.mainFeedbackDiv {
+  width: 50%;
+  margin: auto;
+}
+.feedbackLine {
+  font-family: monospace;
+  text-align: center;
+  margin: 23px 0px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* Order page style */
+
+.orderPageContainer {
+  padding: 50px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 140px); /* Adjust as needed */
+}
+
+.orderContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.orderTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.orderItem {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.orderDetails {
+  padding: 10px;
+}
+
+.orderDate,
+.orderAmount,
+.orderId,
+.userName {
+  margin-bottom: 5px;
+}
+
+.placeOrderButton {
+  display: block;
+  margin: 20px auto;
+}
+
+.backToHome {
+  text-align: center;
+}
+
+.cancelOrderButtonWrapper {
+  text-align: right;
+  margin-top: 10px; 
+}
+.noOrderText{
+  font-size: 23px;
+  font-weight: bold;
+}
