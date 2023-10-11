@@ -83,7 +83,7 @@ export default function AllFood() {
           <div className="cards-container row mt-5">
             {filterdFood == "" ? (
               <p className="not-found-txt">
-                Item not found for{" "}
+                Item not found for
                 <span style={{ fontWeight: "bold" }}>"{searchQuery}"</span>
               </p>
             ) : (

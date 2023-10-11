@@ -28,7 +28,7 @@ export default function Checkout() {
     try {
       const response = await fetch("http://localhost:8080/orders", {
         method: "POST",
-        credentials: "include", // added this part
+        credentials: "include", 
         headers: {
           "Content-Type": "application/json",
         },

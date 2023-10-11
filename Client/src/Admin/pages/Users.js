@@ -19,7 +19,7 @@ function Users() {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 500); // Set loading to false when fetching is done
+      }, 500);
     }
   };
 

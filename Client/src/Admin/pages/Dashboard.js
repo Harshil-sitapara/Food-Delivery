@@ -22,22 +22,10 @@ const data = [
 ];
 
 export default function Dashboard() {
-  const [dailySalesData, setDailySalesData] = useState([]);
   const [totalRevenue, setTotalRevenue] = useState(0);
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalShippedOrders, setTotalShippedOrders] = useState(0);
   const [totalTotalReview, setTotalTotalReview] = useState(0);
-  useEffect(() => {
-    fetch("/api/getDailySalesData")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Received data:", data); // Check the data received from the server
-        setDailySalesData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching daily sales data:", error);
-      });
-  }, []);
 
   useEffect(() => {
     countTotalUser();

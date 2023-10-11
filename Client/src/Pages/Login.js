@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
-//
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-//
 // context
 import { CartContext } from "../App";
 import Swal from "sweetalert2";
@@ -20,7 +18,7 @@ export default function Register() {
         headers: {
           "Content-Type": "application/json",
         },
-         credentials: "include",
+        credentials: "include",
         body: JSON.stringify(loginUserData),
       });
       if (response.status === 200) {
@@ -32,7 +30,7 @@ export default function Register() {
           navigate("/home");
         });
       } else {
-        console.log("CAnt")
+        console.log("CAnt");
         Swal.fire({
           icon: "error",
           title: "Login Failed",
@@ -62,23 +60,6 @@ export default function Register() {
                 e.preventDefault();
               }}
             >
-              {/* <div className="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input
-                  type="text"
-                  name="uname"
-                  className="form-control textFiled"
-                  id="exampleFormControlInput1"
-                  placeholder="Enter your name..."
-                  onChange={(e) => {
-                    setUserData({
-                      ...userData,
-                      [e.target.name]: e.target.value,
-                    });
-                  }}
-                  required
-                />
-              </div> */}
               <div className="form-group">
                 <label for="exampleFormControlInput2">Email Address</label>
                 <input
@@ -115,11 +96,12 @@ export default function Register() {
               </div>
               <p>
                 Don't have an account? <NavLink to={"/"}>Register</NavLink>
-                <br /><br/>
+                <br />
+                <br />
                 Login as Admin
                 <span
                   style={{ cursor: "pointer", textDecoration: "underline" }}
-                  onClick={() => navigate("/admin/login")}
+                  onClick={() => window.open("/admin/login", "_blank")}
                 >
                   Login
                 </span>

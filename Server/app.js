@@ -98,11 +98,12 @@ server.delete("/deleteCart", async (req, res) => {
 });
 
 //session
-server.use(session({
-  secret: "your-secret-key",
-  resave: false,
-  saveUninitialized: true
-}));
+// server.use(session({
+//   secret: "your-secret-key",
+//   resave: false,
+//   saveUninitialized: true
+// }));
+
 
 //orders
 server.post("/orders",restrictToLoginUserOnly, async (req, res) => {
@@ -117,48 +118,8 @@ server.post("/orders",restrictToLoginUserOnly, async (req, res) => {
     order.orderdBy = req.userId;
     await order.save();
     res.status(200).json({ message: "order confirmed" });
-    // console.log("THIS IS OUR USER WHO PLACE THE ORDER",req.user._id)
   } catch (error) {
     console.log("Error while insert order", error);
-  }
-});
-// daily sales
-server.get("/api/getDailySalesData", async (req, res) => {
-  try {
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Set to the start of the current day
-    const nextDay = new Date(currentDate);
-    nextDay.setDate(currentDate.getDate() + 1); // Set to the start of the next day
-
-    const dailySalesData = await Orders.aggregate([
-      {
-        $match: {
-          orderTime: { $gte: currentDate, $lt: nextDay },
-        },
-      },
-      {
-        $group: {
-          _id: { $hour: "$orderTime" }, // Group by hour of the day
-          sales: { $sum: "$orderAmount" }, // Sum of sales amount
-        },
-      },
-      {
-        $sort: { _id: 1 }, // Sort by hour
-      },
-    ]);
-
-    // Format the data for the chart
-    const formattedData = dailySalesData.map((item) => ({
-      name: `${item._id}:00`, // Display as "hour:00"
-      sales: item.sales,
-    }));
-
-    res.status(200).json(formattedData);
-  } catch (error) {
-    console.log("Error while fetching daily sales data", error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while fetching daily sales data" });
   }
 });
 // Update order status
@@ -178,7 +139,7 @@ server.put("/orders/:orderId", async (req, res) => {
   }
 });
 
-//get orders
+//get orders for users
 server.get("/orders", async (req, res) => {
   try {
     const sessionId = req.cookies?.uid;
@@ -188,6 +149,7 @@ server.get("/orders", async (req, res) => {
     console.log("Error while insert order", error);
   }
 });
+
 //get all orders for admin
 server.get("/admin/orders", async (req, res) => {
   try {

@@ -491,7 +491,7 @@ h5 {
       rgba(33, 34, 69, 0.6980392156862745),
       rgba(33, 34, 69, 0.6980392156862745)
     ),
-    url("D:/Food Delivery Project/fooddelivery/Client/src/assets/images/transBack.png");
+    url("../src/assets/images/transBack.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
