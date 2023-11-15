@@ -28,6 +28,7 @@ const { restrictToLoginUserOnly } = require("./middleware/user.js");
 //session
 const session = require("express-session");
 const BASE_URL = process.env.DATABASE
+const PORT = process.env.PORT || 8080;
 
 
 const corsOptions = {
@@ -195,6 +196,6 @@ server.post("/clearCookie:title", (req, res) => {
   res.status(200).send({ message: "Cookies cleared" });
 });
 
-server.listen(8080, () => {
-  console.log("Server started!");
+server.listen(PORT, () => {
+  console.log(`Server started at ${PORT}!`);
 });

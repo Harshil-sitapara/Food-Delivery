@@ -2,11 +2,10 @@
   "name": "Server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon app.js",
     "built":"npm i"
   },
   "keywords": [],
@@ -24,5 +23,8 @@
     "react-router-dom": "^6.15.0",
     "sweetalert2": "^11.7.27",
     "uuid": "^9.0.0"
+  },
+  "engines": {
+    "npm": "6.x"
   }
 }
