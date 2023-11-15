@@ -44,8 +44,6 @@ server.use(express.json());
 const connectionOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify:false,
-  useCreateIndex:true
 };
 
 //connect with db
