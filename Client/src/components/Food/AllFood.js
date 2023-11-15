@@ -6,6 +6,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { CartContext } from "../../App";
+import BASE_URL from '../../services/Helper'
+
 export default function AllFood() {
   const [fooddata, setFoodData] = useState({});
   const [showAlert, setShowAlert] = useState(false);
@@ -16,7 +18,7 @@ export default function AllFood() {
   const navigate = useNavigate();
   useEffect(() => {
     const sendDataToServer = async () => {
-      const response = await fetch("http://localhost:8080/cart", {
+      const response = await fetch(`${BASE_URL}/cart`, {
         method: "POST",
         body: JSON.stringify(fooddata),
         headers: {

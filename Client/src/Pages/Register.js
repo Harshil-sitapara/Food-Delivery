@@ -1,12 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 //
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import BASE_URL from '../services/Helper'
 //
 import regback4 from "../../src/assets/images/regBack4.png";
 // context
 import { CartContext } from "../App";
+
+
 export default function Register() {
   const { setUserData, userData } = useContext(CartContext);
   const navigate = useNavigate();
@@ -15,7 +18,7 @@ export default function Register() {
     // store data in DB
     console.log("userData", userData);
     try {
-      const result = await fetch("http://localhost:8080/users", {
+      const result = await fetch(`${BASE_URL}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

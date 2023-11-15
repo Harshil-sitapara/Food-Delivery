@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../admin.css";
 import { Alert, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from '../../services/Helper'
 
 export default function AdminLogin() {
     const navigate = useNavigate()
@@ -10,7 +11,7 @@ export default function AdminLogin() {
     const[alert,setAlert]=useState(false)
     const authAdmin=async()=>{
       try {
-        const res = await fetch("http://localhost:8080/admin/login",{
+        const res = await fetch(`${BASE_URL}/admin/login`,{
           method:"POST",
           credentials:"include",
           headers: {

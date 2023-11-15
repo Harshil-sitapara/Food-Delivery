@@ -4,6 +4,7 @@ import Rating from "@mui/material/Rating";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import BASE_URL from '../../services/Helper'
 
 function Feeback() {
   const [feedbackData, setFeedbackData] = useState([]);
@@ -12,7 +13,7 @@ function Feeback() {
 
   const fetchAllFeedback = async () => {
     try {
-      const res = await fetch("http://localhost:8080/feedback", {
+      const res = await fetch(`${BASE_URL}/feedback`, {
         method: "GET",
       });
       const data = await res.json();
@@ -38,7 +39,7 @@ function Feeback() {
   );
 
   const handleDeleteFeedback=async(id)=>{
-      const res = await fetch(`http://localhost:8080/feedback/${id}`,{
+      const res = await fetch(`${BASE_URL}/feedback/${id}`,{
         method:"DELETE",
         headers: {
           "Content-Type": "application/json"

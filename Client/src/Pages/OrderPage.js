@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2"; // Import SweetAlert library
 import Footer from "../components/Home/Footer";
 import Navbar from "../components/Home/Navbar";
+import BASE_URL from '../services/Helper'
 
 export default function OrderPage() {
   const [orders, setOrders] = useState([]);
@@ -14,7 +15,7 @@ export default function OrderPage() {
 
   const fetchOrders = async () => {
     try {
-      const ordersResponse = await fetch("http://localhost:8080/orders", {
+      const ordersResponse = await fetch(`${BASE_URL}/orders`, {
         method: "GET",
         credentials: "include", // added this part
       });
@@ -40,7 +41,7 @@ export default function OrderPage() {
         try {
           // Send a request to cancel the order here
           const response = await fetch(
-            `http://localhost:8080/orders/${orderId}`,
+            `${BASE_URL}/orders/${orderId}`,
             {
               method: "DELETE",
             }

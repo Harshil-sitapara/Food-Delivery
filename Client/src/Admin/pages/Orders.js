@@ -6,6 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import BASE_URL from '../../services/Helper'
 
 export default function Orders() {
   const [orderList, setOrderList] = useState([]);
@@ -13,7 +14,7 @@ export default function Orders() {
   const handleChange = async (event, orderId) => {
     const newStatus = event.target.value;
     try {
-      const response = await fetch(`http://localhost:8080/orders/${orderId}`, {
+      const response = await fetch(`${BASE_URL}/orders/${orderId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +44,7 @@ export default function Orders() {
 
   const fetchAllOrders = async () => {
     try {
-      const ordersResponse = await fetch("http://localhost:8080/admin/orders", {
+      const ordersResponse = await fetch(`${BASE_URL}/admin/orders`, {
         method: "GET",
       });
       const ordersData = await ordersResponse.json();

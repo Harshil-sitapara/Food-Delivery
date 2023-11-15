@@ -5,6 +5,8 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 // context
 import { CartContext } from "../App";
 import Swal from "sweetalert2";
+import BASE_URL from "../services/Helper"
+
 export default function Register() {
   const { loginUserData, setLoginUserData } = useContext(CartContext);
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ export default function Register() {
     // store data in DB
     console.log("LoginUserData", loginUserData);
     try {
-      const response = await fetch("http://localhost:8080/users/login", {
+      const response = await fetch(`${BASE_URL}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

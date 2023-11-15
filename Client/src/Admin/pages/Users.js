@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import AdminNav from "../nav/AdminNav";
 import { TextField } from "@mui/material";
 import "../admin.css";
+import BASE_URL from '../../services/Helper'
 
 function Users() {
   const [allUsers, setAllUsers] = useState([]);
@@ -9,7 +10,7 @@ function Users() {
   const [loading, setLoading] = useState(true);
   const handleShowAllUsers = async () => {
     try {
-      const res = await fetch("http://localhost:8080/allusers", {
+      const res = await fetch(`${BASE_URL}/allusers`, {
         method: "GET",
       });
       const data = await res.json();

@@ -3,6 +3,7 @@ import "../admin.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Swal from "sweetalert2";
 import { NavLink, useNavigate } from "react-router-dom";
+import BASE_URL from "../../services/Helper"
 
 function AdminNav() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function AdminNav() {
   const handleAdminLogout=async()=>{
     try {
       const title = "adminId"
-      const userDataRes = await fetch(`http://localhost:8080/clearCookie${title}`, {
+      const userDataRes = await fetch(`${BASE_URL}/clearCookie${title}`, {
         method: "POST",
         credentials: "include", // Include cookies in the request
       });

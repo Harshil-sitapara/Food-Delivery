@@ -4,6 +4,7 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import { NavLink, useNavigate } from "react-router-dom";
 //
 import { CartContext } from "../../App";
+import BASE_URL from '../../services/Helper'
 import Swal from "sweetalert2";
 
 export default function Navbar() {
@@ -61,7 +62,7 @@ export default function Navbar() {
 
   const handleFetchUserData = async () => {
     try {
-      const userDataRes = await fetch("http://localhost:8080/user/fetch", {
+      const userDataRes = await fetch(`${BASE_URL}/user/fetch`, {
         method: "GET",
       });
   
@@ -80,7 +81,7 @@ export default function Navbar() {
   const handleUserLogoutAndNavigate = async () => {
     try {
       const title = "uid"
-      const userDataRes = await fetch(`http://localhost:8080/clearCookie${title}`, {
+      const userDataRes = await fetch(`${BASE_URL}/clearCookie${title}`, {
         method: "POST",
         credentials: "include", // Include cookies in the request
       });

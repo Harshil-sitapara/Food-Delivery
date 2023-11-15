@@ -4,6 +4,7 @@ import { foodpopular } from "../APIs";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { CartContext } from "../../App";
+import BASE_URL from '../../services/Helper'
 
 export default function PopularFood() {
   const [foodData, setFoodData] = useState({});
@@ -14,7 +15,7 @@ export default function PopularFood() {
     const sendDataToServer = async () => {
       try {
         //send data to server
-        const response = await fetch("http://localhost:8080/cart", {
+        const response = await fetch(`${BASE_URL}/cart`, {
           method: "POST",
           body: JSON.stringify(foodData), 
           headers: {

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { HotPizzaItems } from "../APIs";
 import { CartContext } from "../../App";
+import BASE_URL from '../../services/Helper'
 
 export default function HotPizza() {
   const [pizzas, setPizzas] = useState({});
@@ -8,7 +9,7 @@ export default function HotPizza() {
   const [showAlert, setShowAlert] = useState(false);
   useEffect(() => {
     const sendDataToServer = async () => {
-      const response = await fetch("http://localhost:8080/cart", {
+      const response = await fetch(`${BASE_URL}/cart`, {
         method: "POST",
         body: JSON.stringify(pizzas),
         headers: {

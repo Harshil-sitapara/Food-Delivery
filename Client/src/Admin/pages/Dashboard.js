@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Card, CardContent, Typography, Grid } from "@mui/material";
+import BASE_URL from '../../services/Helper'
 
 const data = [
   { name: "Mon", sales: 900 },
@@ -26,6 +27,7 @@ export default function Dashboard() {
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalShippedOrders, setTotalShippedOrders] = useState(0);
   const [totalTotalReview, setTotalTotalReview] = useState(0);
+  
 
   useEffect(() => {
     countTotalUser();
@@ -35,7 +37,7 @@ export default function Dashboard() {
   }, []);
   //total users
   const countTotalUser = async () => {
-    const res = await fetch("http://localhost:8080/allusers", {
+    const res = await fetch(`${BASE_URL}/allusers`, {
       method: "GET",
     });
     const data = await res.json();
@@ -44,7 +46,7 @@ export default function Dashboard() {
   //total revenue
   const countTotalRevenue = async () => {
     try {
-      const res = await fetch("http://localhost:8080/admin/orders", {
+      const res = await fetch(`${BASE_URL}/admin/orders`, {
         method: "GET",
       });
       const data = await res.json();
@@ -62,7 +64,7 @@ export default function Dashboard() {
   //total order shipped
   const countTotalOrderShipped = async () => {
     const result = await fetch(
-      "http://localhost:8080/api/getTotalShippedOrders",
+      `${BASE_URL}/api/getTotalShippedOrders`,
       {
         method: "GET",
       }
@@ -72,7 +74,7 @@ export default function Dashboard() {
   };
   //count total reviews
   const handleTotalReview = async () => {
-    const result = await fetch("http://localhost:8080/feedback", {
+    const result = await fetch(`${BASE_URL}/feedback`, {
       method: "GET",
     });
     const data = await result.json();

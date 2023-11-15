@@ -9,6 +9,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 //
 import { CartContext } from "../App";
 import Footer from "../components/Home/Footer";
+import BASE_URL from '../services/Helper'
 
 export default function Cart() {
   const [mycart, setMyCart] = useState([]);
@@ -26,7 +27,7 @@ export default function Cart() {
 
   const fetchCartData = async () => {
    try {
-    const responce = await fetch("http://localhost:8080/mycart", {
+    const responce = await fetch(`${BASE_URL}/mycart`, {
       method: "GET",
     });
     const data = await responce.json();
@@ -39,7 +40,7 @@ export default function Cart() {
 
   const removeCartData=async()=>{
      try {
-    const responce = await fetch("http://localhost:8080/deleteCart", {
+    const responce = await fetch(`${BASE_URL}/deleteCart`, {
       method: "DELETE",
     });
     const data = await responce.json();
@@ -86,7 +87,7 @@ export default function Cart() {
     const quantity = getQuantities(_id);
     const handleDelete = async (dbId) => {
       try {
-        const response = await fetch(`http://localhost:8080/deleteitem`, {
+        const response = await fetch(`${BASE_URL}/deleteitem`, {
           method: "POST",
           body: JSON.stringify({ itemId: dbId }),
           headers: {

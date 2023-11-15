@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "../components/Home/Footer";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../services/Helper"
 
 export default function Checkout() {
   const [formData, setFormData] = useState({});
@@ -26,7 +27,7 @@ export default function Checkout() {
         userName:formData.fname
     }
     try {
-      const response = await fetch("http://localhost:8080/orders", {
+      const response = await fetch(`${BASE_URL}/orders`, {
         method: "POST",
         credentials: "include", 
         headers: {

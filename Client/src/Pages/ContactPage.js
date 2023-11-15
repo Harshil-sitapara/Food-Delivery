@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import Swal from "sweetalert2";
+import BASE_URL from "../services/Helper"
 
 export default function Contact() {
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Contact() {
 
   const handleStoreData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/feedback", {
+      const response = await fetch(`${BASE_URL}/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
