@@ -41,9 +41,15 @@ server.use(cookieParser());
 server.use(bodyParser.json());
 server.use(express.json());
 
+const connectionOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+};
+
 //connect with db
 const main = async () => {
-  await mongoose.connect(BASE_URL);
+  await mongoose.connect(BASE_URL,connectionOptions);
   console.log("DB connected!");
 };
 main().catch((err) => {
