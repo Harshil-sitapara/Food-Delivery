@@ -26,9 +26,8 @@ const handleRegisterUser = async (req, res) => {
   res.status(200).send({ msg: "user created!" });
 };
 
-const handleFetchUserCrencials=async(req,res)=>{
+const handleFetchUserCredentials=async(req,res)=>{
   try {
-    console.log("REQUEST ARIVE")
     const sessionId = req.cookies?.uid;
     const user = await User.findOne({ _id: sessionId });
 
@@ -43,11 +42,8 @@ const handleFetchUserCrencials=async(req,res)=>{
   }
 }
 
-
-
-
 module.exports = {
   handleUserLogin,
   handleRegisterUser,
-  handleFetchUserCrencials,
+  handleFetchUserCredentials,
 };

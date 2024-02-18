@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -20,22 +20,22 @@ const { fetchShippedOrders } = require("./controllers/orders.js");
 const {
   handleUserLogin,
   handleRegisterUser,
-  handleFetchUserCrencials,
+  handleFetchUserCredentials,
 } = require("./controllers/user.js");
-const{handleAdminLogin} = require("./controllers/admin.js");
+const { handleAdminLogin } = require("./controllers/admin.js");
 //middlewares
 const { restrictToLoginUserOnly } = require("./middleware/user.js");
 //session
 const session = require("express-session");
-const BASE_URL = process.env.DATABASE
+const BASE_URL = process.env.DATABASE;
+console.log("BASE_URL",BASE_URL)
 const PORT = process.env.PORT || 8080;
-
 
 const corsOptions = {
   origin: true,
   credentials: true,
 };
-server.use(cors(corsOptions)); 
+server.use(cors(corsOptions));
 server.use(cookieParser());
 // this allow us to request one port to another
 server.use(bodyParser.json());
@@ -48,12 +48,13 @@ const connectionOptions = {
 
 //connect with db
 const main = async () => {
-  await mongoose.connect(BASE_URL,connectionOptions);
+  await mongoose.connect(BASE_URL, connectionOptions);
   console.log("DB connected!");
 };
 main().catch((err) => {
   console.log("Error while connect to db", err);
 });
+
 
 //users
 server.post("/users", handleRegisterUser);
@@ -62,7 +63,7 @@ server.post("/users/login", handleUserLogin);
 
 server.post("/admin/login", handleAdminLogin);
 
-server.get("/user/fetch",handleFetchUserCrencials)
+server.get("/user/fetch", handleFetchUserCredentials);
 
 //show all users to admin
 server.get("/allusers", async (req, res) => {
@@ -112,9 +113,8 @@ server.delete("/deleteCart", async (req, res) => {
 //   saveUninitialized: true
 // }));
 
-
 //orders
-server.post("/orders",restrictToLoginUserOnly, async (req, res) => {
+server.post("/orders", restrictToLoginUserOnly, async (req, res) => {
   try {
     const sessionId = req.headers.uid;
     console.log("Session ID from Cookie:", sessionId);
@@ -151,7 +151,7 @@ server.put("/orders/:orderId", async (req, res) => {
 server.get("/orders", async (req, res) => {
   try {
     const sessionId = req.cookies?.uid;
-    const response = await Orders.find({orderdBy:sessionId});
+    const response = await Orders.find({ orderdBy: sessionId });
     res.status(200).send(response);
   } catch (error) {
     console.log("Error while insert order", error);
@@ -196,8 +196,8 @@ server.get("/feedback", handleGetFeedback);
 server.delete("/feedback/:id", handleDeleteFeedback);
 
 server.post("/clearCookie:title", (req, res) => {
-  const {title} = req.params;
-  res.clearCookie(title); 
+  const { title } = req.params;
+  res.clearCookie(title);
   res.status(200).send({ message: "Cookies cleared" });
 });
 
