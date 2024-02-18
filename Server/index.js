@@ -28,7 +28,6 @@ const { restrictToLoginUserOnly } = require("./middleware/user.js");
 //session
 const session = require("express-session");
 const BASE_URL = process.env.DATABASE;
-console.log("BASE_URL",BASE_URL)
 const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
