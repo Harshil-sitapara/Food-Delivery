@@ -1,3 +1,3 @@
 //  const BASE_URL = "https://foodease-rfty.onrender.com"
-const BASE_URL="https://food-delivery-seven-beta.vercel.app";
+const BASE_URL="https://foodease-server.onrender.com" || "http://localhost:8080";
 export default BASE_URL;
