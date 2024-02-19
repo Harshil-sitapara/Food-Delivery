@@ -54,6 +54,9 @@ main().catch((err) => {
   console.log("Error while connect to db", err);
 });
 
+server.get("/", (req, res) => {
+  res.send("server started!");
+});
 
 //users
 server.post("/users", handleRegisterUser);
