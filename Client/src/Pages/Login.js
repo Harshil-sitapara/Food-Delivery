@@ -17,7 +17,6 @@ export default function Register() {
     try {
       const response = await fetch(`${BASE_URL}/users/login`, {
         method: "POST",
-        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
