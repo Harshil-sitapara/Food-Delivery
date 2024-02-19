@@ -30,12 +30,13 @@ const session = require("express-session");
 const BASE_URL = process.env.DATABASE;
 const PORT = process.env.PORT || 8080;
 
-const corsOptions = {
-  origin: ["https://food-delivery-client-tau.vercel.app"],
-  methods:["POST","GET","PUT","PATCH"],
+server.use(cors({
+  origin: "https://food-delivery-client-tau.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
   credentials: true,
-};
-server.use(cors(corsOptions));
+}));
+
 server.use(cookieParser());
 // this allow us to request one port to another
 server.use(bodyParser.json());
