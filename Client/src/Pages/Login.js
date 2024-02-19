@@ -18,6 +18,7 @@ export default function Register() {
       const response = await fetch(`${BASE_URL}/users/login`, {
         method: "POST",
         headers: {
+          "access-control-allow-origin" : "*",
           "Content-Type": "application/json",
         },
         credentials: "include",

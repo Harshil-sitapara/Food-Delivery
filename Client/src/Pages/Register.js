@@ -21,6 +21,7 @@ export default function Register() {
       const result = await fetch(`${BASE_URL}/users`, {
         method: "POST",
         headers: {
+          "access-control-allow-origin" : "*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
