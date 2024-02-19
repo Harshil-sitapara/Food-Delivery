@@ -33,7 +33,6 @@ export default function Register() {
           navigate("/home");
         });
       } else {
-        console.log("CAnt");
         Swal.fire({
           icon: "error",
           title: "Login Failed",
@@ -41,7 +40,7 @@ export default function Register() {
         });
       }
     } catch (error) {
-      console.log("Errro whiel store user data", error);
+      console.log("Error while store user data", error);
     }
   };
 

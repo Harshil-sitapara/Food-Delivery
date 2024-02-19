@@ -20,9 +20,7 @@ export default function Register() {
     try {
       const result = await fetch(`${BASE_URL}/users`, {
         method: "POST",
-        mode: 'no-cors',
         headers: {
-          "access-control-allow-origin" : "*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
