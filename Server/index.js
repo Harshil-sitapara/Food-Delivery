@@ -31,7 +31,7 @@ const BASE_URL = process.env.DATABASE;
 const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
-  origin: true,
+  origin: ["https://food-delivery-client-tau.vercel.app","http://localhost:3000"],
   credentials: true,
 };
 server.use(cors(corsOptions));
